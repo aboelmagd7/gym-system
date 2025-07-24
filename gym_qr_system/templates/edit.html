@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head><meta charset="UTF-8"><title>تعديل العميل</title></head>
+<body>
+<h1>تعديل بيانات العميل</h1>
+<form method="post">
+    الاسم: <input type="text" name="name" value="{{ client.name }}" required><br>
+    الهاتف: <input type="text" name="phone" value="{{ client.phone }}" required><br>
+    نوع الاشتراك:
+    <select name="subscription_type" required>
+        <option value="شهري" {% if client.subscription_type == 'شهري' %}selected{% endif %}>شهري</option>
+        <option value="ربع سنوي" {% if client.subscription_type == 'ربع سنوي' %}selected{% endif %}>ربع سنوي</option>
+        <option value="سنوي" {% if client.subscription_type == 'سنوي' %}selected{% endif %}>سنوي</option>
+    </select><br>
+    <input type="submit" value="تعديل">
+</form>
+</body>
+</html>
