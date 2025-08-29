@@ -1,6 +1,0 @@
-services:
-  - type: web
-    name: gym-flask
-    env: python
-    buildCommand: ""
-    startCommand: gunicorn app:app
